@@ -1,4 +1,4 @@
-package org.greedy.gateway.domain.apiInstance.entity;
+package org.greedy.gateway.domain.apiinstance.entity;
 
 /**
  * API实例状态枚举

@@ -1,4 +1,4 @@
-package org.greedy.gateway.domain.apiInstance.entity;
+package org.greedy.gateway.domain.apiinstance.entity;
 
 /**
  * 负载均衡策略类型
