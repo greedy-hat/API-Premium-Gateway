@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * API实例数据传输对象
  * 
- * @author xhy
+ * @author greedy
  * @since 1.0.0
  */
 public class ApiInstanceDTO {

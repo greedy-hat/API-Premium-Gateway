@@ -19,8 +19,8 @@ public class ApiKeyDTO {
     public ApiKeyDTO() {
     }
 
-    public ApiKeyDTO(String id, String apiKeyValue, String description, String status,
-                     LocalDateTime expiresAt, LocalDateTime lastUsedAt,
+    public ApiKeyDTO(String id, String apiKeyValue, String description, String status, 
+                     LocalDateTime expiresAt, LocalDateTime lastUsedAt, 
                      LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.apiKeyValue = apiKeyValue;
