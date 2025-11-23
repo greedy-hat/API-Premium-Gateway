@@ -133,7 +133,9 @@ public class SelectionAppService {
 
                 // todo xhy 可能有问题，大家自行研究一下。我盲猜这段代码是有问题的
 
-                ApiInstanceDTO result = selectInstanceInternal(fallbackRequest, currentProjectId);
+                ApiInstanceDTO result = apiInstanceSelectionDomainService.selectInstance(fallbackRequest, currentProjectId);
+
+                //ApiInstanceDTO result = selectInstanceInternal(fallbackRequest, currentProjectId);
                 
                 logger.info("降级成功，选择到实例: businessId={}, instanceId={}", 
                         result.getBusinessId(), result.getId());

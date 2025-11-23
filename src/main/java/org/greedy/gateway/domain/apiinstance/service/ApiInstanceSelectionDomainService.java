@@ -1,6 +1,9 @@
 package org.greedy.gateway.domain.apiinstance.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import org.greedy.gateway.application.assembler.ApiInstanceAssembler;
+import org.greedy.gateway.application.dto.ApiInstanceDTO;
+import org.greedy.gateway.interfaces.api.request.SelectInstanceRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -128,5 +131,21 @@ public class ApiInstanceSelectionDomainService {
         }
         
         return selected;
+    }
+
+    /**
+     * 获取具体API实例
+     *
+     * @param fallbackRequest 命令对象
+     * @return 最佳API实例
+     */
+    public ApiInstanceDTO selectInstance(SelectInstanceRequest fallbackRequest, String currentProjectId) {
+
+        ApiInstanceEntity selectedEntity = apiInstanceRepository.selectById(fallbackRequest.getApiIdentifier());
+
+        logger.debug("查找实例: projectId={}, apiIdentifier={}, apiType={}, 找到Id为：{}实例",
+                currentProjectId, fallbackRequest.getApiIdentifier(), fallbackRequest.getApiType(), selectedEntity.getId());
+
+        return ApiInstanceAssembler.toDTO(selectedEntity);
     }
 } 
